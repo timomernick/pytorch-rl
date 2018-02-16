@@ -13,12 +13,8 @@ class Agent(nn.Module):
         super(Agent, self).__init__()
 
         self.env = environment
-
         self.use_cuda = use_cuda
-
         self.epsilon_max = 0.1
-
-        self.use_cuda = use_cuda
 
     def optional_cuda(self, variable):
         if self.use_cuda:
