@@ -8,7 +8,7 @@ from agent_rl import RLAgent
 env = gym.make("FrozenLake-v0")
 
 # Create an agent to act in the environment.
-agent = ESAgent(environment=env, use_cuda=False)
+agent = RLAgent(environment=env, use_cuda=False)
 
 # Train the agent.
 max_episodes = 1000
