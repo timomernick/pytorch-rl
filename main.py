@@ -1,16 +1,17 @@
 import gym
 import math
 import numpy as np
-from agent import Agent
+from agent_es import ESAgent
+from agent_rl import RLAgent
 
 # Load the environment.
 env = gym.make("FrozenLake-v0")
 
 # Create an agent to act in the environment.
-agent = Agent(environment=env)
+agent = ESAgent(environment=env, use_cuda=False)
 
 # Train the agent.
-max_episodes = 3000
+max_episodes = 1000
 episode_rewards = np.zeros([max_episodes], dtype=np.float32)
 for episode in range(max_episodes):
     total_reward = agent.run(episode, max_episodes)
